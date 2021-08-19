@@ -1,5 +1,8 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "90b0eb33-70b8-448f-a5c9-072f6498ca93"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -15,7 +18,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "pmo",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -28,7 +31,12 @@
             "inlineStyleLanguage": "less",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/place-my-order-assets/images/",
+                "output": "./assets/images"
+              }
             ],
             "styles": [
               "src/styles.less"
@@ -75,7 +83,8 @@
               "browserTarget": "tailwindcss:build:production"
             },
             "development": {
-              "browserTarget": "tailwindcss:build:development"
+              "browserTarget": "tailwindcss:build:development",
+              "port": 4203
             }
           },
           "defaultConfiguration": "development"
