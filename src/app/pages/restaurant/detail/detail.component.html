@@ -17,19 +17,23 @@
       </div>
     </div>
   </div>
-  <div class=" max-w-3xl flex-col w-full p-8 bg-white-100 dark:bg-gray-700 dark:text-white shadow-xl h-full pt-4">
+  <div class=" max-w-3xl flex-col w-full p-8 bg-white-100 dark:bg-gray-700 dark:text-white shadow-xl h-full pt-4 overflow-y-scroll">
     <div class="flex fex-col sm:flex gap-2">
       <div class="flex flex-col gap-4 w-full sm:w-11/12">
         <span class="text-3xl">The best food this side of the Mississippi</span>
         <p class="">Description for Restaurant Name</p>
+        <div class="sm:hidden flex content-center items-center  text-center justify-center">
+          <img [src]="'./assets/2-thumbnail.jpg'" class="thumb-img-restaurant-owner">
+        </div>
         <div class=" content-center items-center  text-center justify-center">
           <button  [routerLink]="['/restaurants', 'name_restaurant', 'order']"
-                   class="py-3 px-4 border w-max shadow-sm text-base font-normal rounded-md text-white bg-picton-blue dark:bg-gray-700">Order from Restaurant Poutine</button>
+                   class="py-3 px-4 border w-max shadow-sm text-base font-normal rounded-md text-white bg-picton-blue dark:bg-gray-700 text-overflow: ellipsis">Order from Restaurant Poutine</button>
         </div>
       </div>
-      <div class="flex flex-wrap content-end mt-9 justify-end w-full sm:w-max">
+      <div class="hidden sm:flex flex-wrap content-end mt-9 justify-end w-full sm:w-max">
         <img [src]="'./assets/2-thumbnail.jpg'" class="thumb-img-restaurant-owner">
       </div>
+
     </div>
   </div>
 </div>
